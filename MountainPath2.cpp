@@ -19,8 +19,8 @@ int main()
 
 	int mapRow, mapColumns;
 	int shadeGray = 0;
-    int elevationPoint = 0;
-    int temp = 0;
+        int elevationPoint = 0;
+        int temp = 0;
 	cout << "check point -1" << endl;
 	vector <vector<int>> vectorMap;
 	
@@ -100,7 +100,7 @@ int main()
 	}
 	// call the function to find the minElevation and maxElevation value
    
-    // Read from file into a nested loop
+    	// Read from file into a nested loop
 	int minElevation = vectorMap.at(0).at(0);
 	int maxElevation = vectorMap.at(0).at(0);
 	
