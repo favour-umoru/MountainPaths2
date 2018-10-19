@@ -41,7 +41,7 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 			if((elevChange1 < elevChange2 && elevChange1 < elevChange3)
 			{
 				minElevationChange = elevChange1;
-				minElevationChange = elevChange1;
+				totalElevChange += elevChange1;
 				R.at(start_row + i + 1).at(j - 1) = 252;
 				G.at(start_row + i + 1).at(j - 1) = 25;
 				B.at(start_row + i + 1).at(j - 1) = 63;
@@ -50,7 +50,7 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 			else if((elevChange2 < elevChange1 && elevChange2 < elevChange3)
 			{
 				minElevationChange = elevChange2;
-				minElevationChange = elevChange2;
+				totalElevChange += elevChange2;
 				R.at(start_row + i + 1).at(j) = 252;
 				G.at(start_row + i + 1).at(j) = 25;
 				B.at(start_row + i + 1).at(j) = 63;
@@ -60,7 +60,7 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 			{
 				minElevationChange = elevChange3;
 					
-				minElevationChange = elevChange3;
+				totalElevChange += elevChange3;
 				R.at(start_row + i + 1).at(j + 1) = 252;
 				G.at(start_row + i + 1).at(j + 1) = 25;
 				B.at(start_row + i + 1).at(j + 1) = 63;
@@ -72,5 +72,5 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 		}
 	}
 	
-	return dist;
+	return totalElevChange;
 }
