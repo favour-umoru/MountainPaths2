@@ -5,6 +5,7 @@
 #include <vector>
 #include<cmath>
 #include<cstdlib>
+#include "functions.h"
 
 using namespace std;
 
