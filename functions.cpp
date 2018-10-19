@@ -1,5 +1,6 @@
 #include<vector>
 #include "functions.h"
+#include<cmath>
 
 using namespace std;
 
@@ -11,16 +12,16 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 	int elevChange3 = 99999;
 	int totalElevChange = 0;
 	
-	// Go through the elevation data
+	// go through the elevation data
 	for(int i = 0; i < heightMap.size(); i++)
 	{
         for (int j = 0; j < heightMap.at(1).size(); j++)
 		{
-			R.at(start_row).at(j) = 252;
-			G.at(start_row).at(j) = 25;
-			B.at(start_row).at(j) = 63;
+			r.at(start_row).at(j) = 252;
+			g.at(start_row).at(j) = 25;
+			b.at(start_row).at(j) = 63;
 	
-			// Go through the heightMap and calculates the path for the row.
+			// go through the heightMap and calculates the path for the row.
 			// Check to see if the value of the column above the row after the start row is inbounds
 			if((j - 1)>=0)
 			{
@@ -36,34 +37,34 @@ int colorPath(const vector<vector<int>>& heightMap, vector<vector<int>>& r, vect
 			}
 
 			// Find the Minimum change in elevation by comparing the elevation changes 
-			int minElevationChange = heightMap.at(start_row).at(j));
+			int minElevationChange = heightMap.at(start_row).at(j);
 			
-			if((elevChange1 < elevChange2 && elevChange1 < elevChange3)
+			if(elevChange1 < elevChange2 && elevChange1 < elevChange3)
 			{
 				minElevationChange = elevChange1;
 				totalElevChange += elevChange1;
-				R.at(start_row + i + 1).at(j - 1) = 252;
-				G.at(start_row + i + 1).at(j - 1) = 25;
-				B.at(start_row + i + 1).at(j - 1) = 63;
+				r.at(start_row + i + 1).at(j - 1) = 252;
+				g.at(start_row + i + 1).at(j - 1) = 25;
+				b.at(start_row + i + 1).at(j - 1) = 63;
 				
 			}
-			else if((elevChange2 < elevChange1 && elevChange2 < elevChange3)
+			else if(elevChange2 < elevChange1 && elevChange2 < elevChange3)
 			{
 				minElevationChange = elevChange2;
 				totalElevChange += elevChange2;
-				R.at(start_row + i + 1).at(j) = 252;
-				G.at(start_row + i + 1).at(j) = 25;
-				B.at(start_row + i + 1).at(j) = 63;
+				r.at(start_row + i + 1).at(j) = 252;
+				g.at(start_row + i + 1).at(j) = 25;
+				b.at(start_row + i + 1).at(j) = 63;
 				
 			}
-			else if((elevChange3 < elevChange1 && elevChange3 < elevChange2)
+			else if(elevChange3 < elevChange1 && elevChange3 < elevChange2)
 			{
 				minElevationChange = elevChange3;
 					
 				totalElevChange += elevChange3;
-				R.at(start_row + i + 1).at(j + 1) = 252;
-				G.at(start_row + i + 1).at(j + 1) = 25;
-				B.at(start_row + i + 1).at(j + 1) = 63;
+				r.at(start_row + i + 1).at(j + 1) = 252;
+				g.at(start_row + i + 1).at(j + 1) = 25;
+				b.at(start_row + i + 1).at(j + 1) = 63;
 				
 			}
 				
