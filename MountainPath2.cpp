@@ -19,8 +19,8 @@ int main()
 
 	int mapRow, mapColumns;
 	int shadeGray = 0;
-        int elevationPoint = 0;
-        int temp = 0;
+	int elevationPoint = 0;
+	int temp = 0;
 	cout << "check point -1" << endl;
 	vector <vector<int>> vectorMap;
 	
@@ -125,7 +125,7 @@ int main()
 	
     for(int i = 0; i < mapRow; i++){
         for (int j = 0; j < mapColumns; j++){
-          // Set the minElevation value to the vector of vector from the file.
+          
             elevationPoint = vectorMap.at(i).at(j);
 		
             shadeGray = round(((elevationPoint - static_cast<double>(minElevation))/(maxElevation - minElevation)) * 255);
